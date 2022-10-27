@@ -15,8 +15,17 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return "Engine Service Running..."', () => {
+      expect(appController.initializePromotionEngine()).toBe(
+        'Engine Service Running...',
+      );
+    });
+
+    it('should return "Engine Service Running..."', () => {
+      expect(appController.healthChekPromotionEngine()).toBe({
+        status: 200,
+        message: 'engine service up and running on port:3000',
+      });
     });
   });
 });
